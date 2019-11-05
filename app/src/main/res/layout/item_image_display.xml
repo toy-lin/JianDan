@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/iv_item_image_display"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ProgressBar
+        android:id="@+id/pb_item_image_display"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:indeterminate="false"
+        android:indeterminateDrawable="@drawable/progress_rotate_gray" />
+
+    <TextView
+        android:id="@+id/tv_item_image_display_failed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp"
+        android:text="图片加载失败，点击重新加载" />
+
+</FrameLayout>

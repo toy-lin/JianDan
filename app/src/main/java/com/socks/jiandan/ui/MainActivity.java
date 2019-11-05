@@ -9,9 +9,9 @@ import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.provider.Settings;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,6 +23,7 @@ import com.socks.jiandan.base.JDApplication;
 import com.socks.jiandan.model.NetWorkEvent;
 import com.socks.jiandan.ui.fragment.FreshNewsFragment;
 import com.socks.jiandan.ui.fragment.MainMenuFragment;
+import com.socks.jiandan.ui.fragment.SisterFragment;
 import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShowToast;
 
@@ -74,7 +75,7 @@ public class MainActivity extends BaseActivity {
         mActionBarDrawerToggle.syncState();
         mDrawerLayout.setDrawerListener(mActionBarDrawerToggle);
 
-        replaceFragment(R.id.frame_container, new FreshNewsFragment());
+        replaceFragment(R.id.frame_container, new SisterFragment());
         replaceFragment(R.id.drawer_container, new MainMenuFragment());
     }
 

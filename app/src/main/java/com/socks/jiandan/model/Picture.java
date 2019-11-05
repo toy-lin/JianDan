@@ -5,7 +5,8 @@ import java.io.Serializable;
 public class Picture implements Serializable {
 
     public static final String URL_BORING_PICTURE = "http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_pic_comments&page=";
-    public static final String URL_SISTER = "http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_ooxx_comments&page=";
+//    public static final String URL_SISTER = "http://jandan.net/?oxwlxojflwblxbsapi=jandan.get_ooxx_comments&page=";
+    public static final String URL_SISTER = "https://carewatchdev.qkcorp.qiku.com/python/test?page=";
 
     public enum PictureType {
         BoringPicture, Sister

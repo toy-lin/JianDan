@@ -3,7 +3,8 @@ package com.socks.jiandan.model;
 public class CommentNumber {
 
     //用于获取评论数量
-    public static final String URL_COMMENT_COUNTS = "http://jandan.duoshuo.com/api/threads/counts.json?threads=";
+//    public static final String URL_COMMENT_COUNTS = "http://jandan.duoshuo.com/api/threads/counts.json?threads=";
+    public static final String URL_COMMENT_COUNTS = "https://carewatchdev.qkcorp.qiku.com/python/comments?threads=";
     public static final String COMMENTS = "comments";
 
     public static final String THREAD_ID = "thread_id";

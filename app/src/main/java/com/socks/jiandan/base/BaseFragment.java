@@ -1,7 +1,7 @@
 package com.socks.jiandan.base;
 
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 import com.android.volley.Request;
 import com.socks.jiandan.BuildConfig;

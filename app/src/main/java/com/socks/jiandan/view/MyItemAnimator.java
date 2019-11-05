@@ -3,7 +3,10 @@ package com.socks.jiandan.view;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 
 import java.util.ArrayList;
@@ -16,6 +19,26 @@ public class MyItemAnimator extends RecyclerView.ItemAnimator {
 
 	List<RecyclerView.ViewHolder> mAnimationAddViewHolders = new ArrayList<RecyclerView.ViewHolder>();
 	List<RecyclerView.ViewHolder> mAnimationRemoveViewHolders = new ArrayList<RecyclerView.ViewHolder>();
+
+	@Override
+	public boolean animateDisappearance(@NonNull RecyclerView.ViewHolder viewHolder, @NonNull ItemHolderInfo preLayoutInfo, @Nullable ItemHolderInfo postLayoutInfo) {
+		return false;
+	}
+
+	@Override
+	public boolean animateAppearance(@NonNull RecyclerView.ViewHolder viewHolder, @Nullable ItemHolderInfo preLayoutInfo, @NonNull ItemHolderInfo postLayoutInfo) {
+		return false;
+	}
+
+	@Override
+	public boolean animatePersistence(@NonNull RecyclerView.ViewHolder viewHolder, @NonNull ItemHolderInfo preLayoutInfo, @NonNull ItemHolderInfo postLayoutInfo) {
+		return false;
+	}
+
+	@Override
+	public boolean animateChange(@NonNull RecyclerView.ViewHolder oldHolder, @NonNull RecyclerView.ViewHolder newHolder, @NonNull ItemHolderInfo preLayoutInfo, @NonNull ItemHolderInfo postLayoutInfo) {
+		return false;
+	}
 
 	//需要执行动画时会系统会调用，用户无需手动调用
 	@Override
@@ -64,28 +87,28 @@ public class MyItemAnimator extends RecyclerView.ItemAnimator {
 		} else if (!mAnimationRemoveViewHolders.isEmpty()) {
 		}
 	}
-
-	//remove时系统会调用，返回值表示是否需要执行动画
-	@Override
-	public boolean animateRemove(RecyclerView.ViewHolder viewHolder) {
-		return mAnimationRemoveViewHolders.add(viewHolder);
-	}
-
-	//viewholder添加时系统会调用
-	@Override
-	public boolean animateAdd(RecyclerView.ViewHolder viewHolder) {
-		return mAnimationAddViewHolders.add(viewHolder);
-	}
-
-	@Override
-	public boolean animateMove(RecyclerView.ViewHolder viewHolder, int i, int i2, int i3, int i4) {
-		return false;
-	}
-
-	@Override
-	public boolean animateChange(RecyclerView.ViewHolder oldHolder, RecyclerView.ViewHolder newHolder, int fromLeft, int fromTop, int toLeft, int toTop) {
-		return false;
-	}
+//
+//	//remove时系统会调用，返回值表示是否需要执行动画
+//	@Override
+//	public boolean animateRemove(RecyclerView.ViewHolder viewHolder) {
+//		return mAnimationRemoveViewHolders.add(viewHolder);
+//	}
+//
+//	//viewholder添加时系统会调用
+//	@Override
+//	public boolean animateAdd(RecyclerView.ViewHolder viewHolder) {
+//		return mAnimationAddViewHolders.add(viewHolder);
+//	}
+//
+//	@Override
+//	public boolean animateMove(RecyclerView.ViewHolder viewHolder, int i, int i2, int i3, int i4) {
+//		return false;
+//	}
+//
+//	@Override
+//	public boolean animateChange(RecyclerView.ViewHolder oldHolder, RecyclerView.ViewHolder newHolder, int fromLeft, int fromTop, int toLeft, int toTop) {
+//		return false;
+//	}
 
 	@Override
 	public void endAnimation(RecyclerView.ViewHolder viewHolder) {

@@ -7,7 +7,7 @@
  */
 package com.socks.jiandan.utils;
 
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.widget.Toast;
 
 import com.socks.jiandan.base.JDApplication;

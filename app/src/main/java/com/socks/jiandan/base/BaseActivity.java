@@ -9,9 +9,9 @@ package com.socks.jiandan.base;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.android.volley.Request;
 import com.socks.jiandan.BuildConfig;
@@ -21,7 +21,6 @@ import com.socks.jiandan.utils.logger.LogLevel;
 import com.socks.jiandan.utils.logger.Logger;
 
 public abstract class BaseActivity extends AppCompatActivity implements ConstantString {
-
     protected Context mContext;
 
     @Override
