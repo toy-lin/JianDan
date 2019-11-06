@@ -2,8 +2,6 @@ package com.socks.jiandan.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.view.MotionEvent;
@@ -21,7 +19,6 @@ public class SwipeFrameLayout extends FrameLayout {
     private int downX;
     private int downY;
     private int tempY;
-    private static final int interval = 500;
     private View child;
     private SwipeListener lis;
     private boolean finishingView;
@@ -31,11 +28,11 @@ public class SwipeFrameLayout extends FrameLayout {
         void onSwipe(float offset);
     }
 
-    public SwipeFrameLayout(@NonNull Context context) {
+    public SwipeFrameLayout(Context context) {
         super(context);
     }
 
-    public SwipeFrameLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SwipeFrameLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
 
         mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();

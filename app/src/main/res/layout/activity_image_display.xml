@@ -7,17 +7,17 @@
     android:animateLayoutChanges="true"
     android:background="@android:color/black">
 
-    <com.qiku.bbs.views.SwipeFrameLayout
+    <com.socks.jiandan.view.SwipeFrameLayout
         android:id="@+id/sfl_image_display"
         android:layout_width="match_parent"
-        android:visibility="gone"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:visibility="gone">
 
-        <android.support.v4.view.BetterViewPager
+        <androidx.viewpager.widget.ViewPager
             android:id="@+id/vp_image_display"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </com.qiku.bbs.views.SwipeFrameLayout>
+    </com.socks.jiandan.view.SwipeFrameLayout>
 
     <ProgressBar
         android:id="@+id/pb_image_display_loading"
@@ -34,59 +34,7 @@
         android:layout_height="match_parent"
         android:visibility="gone" />
 
-    <RelativeLayout
-        android:id="@+id/rl_image_display_top"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#44000000"
-        android:paddingBottom="20dp">
-
-        <com.qiku.bbs.module.headsup.widget.CircleImageView
-            android:id="@+id/iv_image_display_avatar"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/coolyou_head_default" />
-
-        <TextView
-            android:id="@+id/tv_image_display_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/iv_image_display_avatar"
-            android:layout_marginLeft="10dp"
-            android:layout_toRightOf="@id/iv_image_display_avatar"
-            android:maxLines="1"
-            android:textSize="15sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/tv_image_display_production"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/tv_image_display_name"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="1dp"
-            android:layout_toRightOf="@+id/tv_image_display_name"
-            android:background="@drawable/shape_round_rect_line_gray"
-            android:paddingBottom="1dp"
-            android:paddingLeft="4dp"
-            android:paddingRight="4dp"
-            android:paddingTop="1dp"
-            android:textSize="10sp"
-            android:visibility="gone" />
-
-        <TextView
-            android:id="@+id/tv_image_display_fans"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@id/tv_image_display_name"
-            android:layout_below="@+id/tv_image_display_name"
-            android:maxLines="1"
-            android:textSize="11sp" />
-    </RelativeLayout>
-
-    <com.qiku.bbs.views.MaxHeightScrollView
+    <com.socks.jiandan.view.MaxHeightScrollView
         android:id="@+id/sv_image_display_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -129,7 +77,7 @@
                     android:textSize="13sp" />
             </LinearLayout>
         </LinearLayout>
-    </com.qiku.bbs.views.MaxHeightScrollView>
+    </com.socks.jiandan.view.MaxHeightScrollView>
 
     <LinearLayout
         android:id="@+id/ll_image_display_menu"
@@ -146,44 +94,6 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:src="@drawable/coolyou_ic_back_icon" />
-
-        <TextView
-            android:id="@+id/tv_image_display_reply"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:background="@drawable/shape_round_rect_gray"
-            android:lines="1"
-            android:maxLines="1"
-            android:paddingBottom="5dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="5dp"
-            android:text="写评论" />
-
-        <RelativeLayout
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginLeft="10dp">
-
-            <ImageView
-                android:id="@+id/iv_image_display_comment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:padding="5dp"
-                android:src="@drawable/coolyou_post_reply" />
-
-            <TextView
-                android:id="@+id/tv_image_display_badge_comment"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:gravity="center"
-                android:textColor="@android:color/white"
-                android:background="@drawable/bobo"
-                android:textSize="10sp"
-                android:visibility="gone" />
-        </RelativeLayout>
 
         <RelativeLayout
             android:layout_width="33dp"
@@ -208,23 +118,16 @@
                 android:textSize="10sp"
                 android:visibility="gone" />
         </RelativeLayout>
-        <ImageView
-            android:id="@+id/iv_image_display_share"
-            android:layout_width="33dp"
-            android:layout_height="33dp"
-            android:layout_marginLeft="10dp"
-            android:padding="5dp"
-            android:src="@drawable/coolyou_post_share" />
     </LinearLayout>
 
     <ImageView
         android:id="@+id/iv_image_display_download"
         android:layout_width="35dp"
         android:layout_height="35dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
         android:padding="5dp"
         android:src="@drawable/coolyou_kupai_image_save_icon"
         android:visibility="gone" />

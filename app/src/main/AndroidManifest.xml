@@ -43,6 +43,10 @@
             android:screenOrientation="portrait"
             android:theme="@style/ImageDetailActivityTheme" />
         <activity
+            android:name=".ui.ImageDisplayActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme_ImageDisplay" />
+        <activity
             android:name=".ui.FreshNewsDetailActivity"
             android:label="@string/title_activity_fresh_news_detail"
             android:theme="@style/FreshNewsDetailActivityTheme" />

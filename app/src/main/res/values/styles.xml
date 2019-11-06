@@ -51,4 +51,9 @@
         <item name="windowActionBarOverlay">true</item>
     </style>
 
+    <style name="Theme_ImageDisplay" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

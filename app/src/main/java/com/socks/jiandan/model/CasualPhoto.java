@@ -5,12 +5,16 @@ import com.google.gson.annotations.SerializedName;
 import java.util.List;
 
 public class CasualPhoto {
+    @SerializedName("code")
     public int result;
+    @SerializedName("msg")
     public String message;
+    @SerializedName("data")
     public Data data;
 
     public static class Data {
         public String tid;
+        @SerializedName("author")
         public String author;
         @SerializedName("follower")
         public int fans;
@@ -35,8 +39,9 @@ public class CasualPhoto {
     }
 
     public static class ImageText {
+        @SerializedName("url")
         public String url;
-        @SerializedName("description")
+        @SerializedName("desc")
         public String desc;
     }
 }

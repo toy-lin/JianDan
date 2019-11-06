@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
-import androidx.cardview.widget.CardView;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +34,7 @@ import com.socks.jiandan.net.Request4Picture;
 import com.socks.jiandan.net.RequestManager;
 import com.socks.jiandan.ui.CommentListActivity;
 import com.socks.jiandan.ui.ImageDetailActivity;
+import com.socks.jiandan.ui.ImageDisplayActivity;
 import com.socks.jiandan.utils.FileUtil;
 import com.socks.jiandan.utils.NetWorkUtil;
 import com.socks.jiandan.utils.ShareUtil;
@@ -47,6 +46,8 @@ import com.socks.jiandan.view.imageloader.ImageLoadProxy;
 
 import java.util.ArrayList;
 
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
@@ -139,16 +140,17 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
         holder.img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(mActivity, ImageDetailActivity.class);
+                Intent intent = new Intent(mActivity, ImageDisplayActivity.class);
 
-                intent.putExtra(BaseActivity.DATA_IMAGE_AUTHOR, picture.getComment_author());
-                intent.putExtra(BaseActivity.DATA_IMAGE_URL, picture.getPics());
-                intent.putExtra(BaseActivity.DATA_IMAGE_ID, picture.getComment_ID());
-                intent.putExtra(BaseActivity.DATA_THREAD_KEY, "comment-" + picture.getComment_ID());
-
-                if (picture.getPics()[0].endsWith(".gif")) {
-                    intent.putExtra(BaseActivity.DATA_IS_NEED_WEBVIEW, true);
-                }
+                intent.putExtra("tid", "123");
+//                intent.putExtra(BaseActivity.DATA_IMAGE_AUTHOR, picture.getComment_author());
+//                intent.putExtra(BaseActivity.DATA_IMAGE_URL, picture.getPics());
+//                intent.putExtra(BaseActivity.DATA_IMAGE_ID, picture.getComment_ID());
+//                intent.putExtra(BaseActivity.DATA_THREAD_KEY, "comment-" + picture.getComment_ID());
+//
+//                if (picture.getPics()[0].endsWith(".gif")) {
+//                    intent.putExtra(BaseActivity.DATA_IS_NEED_WEBVIEW, true);
+//                }
 
                 mActivity.startActivity(intent);
             }
@@ -193,7 +195,7 @@ public class PictureAdapter extends RecyclerView.Adapter<PictureAdapter.PictureV
                                     //保存
                                     case 1:
                                         FileUtil.savePicture(mActivity, picture
-                                                .getPics()[0],mSaveFileCallBack);
+                                                .getPics()[0], mSaveFileCallBack);
                                         break;
                                 }
                             }
